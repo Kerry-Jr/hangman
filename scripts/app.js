@@ -11,19 +11,37 @@ window.addEventListener("keypress", (e) => {
 });
 
 const render = () => {
-  puzzleEl.textContent = game1.puzzle;
+ 
+  // puzzleEl.textContent = game1.puzzle;
+  puzzleEl.innerHTML = '';
   guessesEl.textContent = game1.statusMessage;
+  
+
+  game1.puzzle.split("").forEach((letter) => {
+    const letterEl = document.createElement('span')
+    letterEl.textContent = letter
+    puzzleEl.appendChild(letterEl)
+  })
+  // console.log(game1.word.split(""))
+
+//   const secretWord = game1.word.split("")
+
+// secretWord.forEach((words) => {
+//   const spanEl = document.createElement('span')
+//   spanEl.textContent = words.split("")
+//   puzzleEl.appendChild(spanEl)
+// })
+
+  // puzzleEl.appendChild(spanEl)
 }
 
 
 const startGame = async () => {
   const puzzle = await getPuzzle('2')
   game1 = new Hangman(puzzle, 5)
-  console.log(game1)
+  // console.log(game1)
   render()
 }
-
-
 
 // getPuzzle("2").then((puzzle) => {
 //   console.log(puzzle)
@@ -31,9 +49,7 @@ const startGame = async () => {
 //   console.log(`Error: ${err}`)
 // })
 
-
 document.querySelector('#reset').addEventListener('click', startGame)
-
 
 startGame()
 
@@ -42,4 +58,3 @@ startGame()
 // }).catch((err) => {
 //   console.log(err)
 // })
-

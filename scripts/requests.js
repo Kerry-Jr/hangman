@@ -19,7 +19,7 @@ const getCountry = async (countryCode) => {
       throw new Error('Unable to fetch country by given code!')
     }
   }
-
+  
 const getLocation = async () => {
   const token = 'fec872128b506f'
   const response = await fetch(`https://ipinfo.io/json?token=${token}`)
