@@ -1,3 +1,6 @@
+import Hangman from './hangman'
+import getPuzzle from './requests'
+
 const puzzleEl = document.querySelector("#puzzle");
 const guessesEl = document.querySelector("#guesses");
 let game1
@@ -22,17 +25,7 @@ const render = () => {
     letterEl.textContent = letter
     puzzleEl.appendChild(letterEl)
   })
-  // console.log(game1.word.split(""))
 
-//   const secretWord = game1.word.split("")
-
-// secretWord.forEach((words) => {
-//   const spanEl = document.createElement('span')
-//   spanEl.textContent = words.split("")
-//   puzzleEl.appendChild(spanEl)
-// })
-
-  // puzzleEl.appendChild(spanEl)
 }
 
 

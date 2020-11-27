@@ -1,0 +1,1 @@
+(()=>{console.log("Kerry Smith");const o=new class{myMethod(){return"Testing"}};console.log(o.myMethod())})();
